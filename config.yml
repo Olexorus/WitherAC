@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.12.0
+# Last updated in version: 0.13.1
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
 #
 # I tried to document everything as clearly as possible, but if you have any questions or other problems, you can join the WAC Discord:
@@ -28,7 +28,7 @@ General:
   # How many violations are necessary before WAC starts sending notifications, for example when it's set to 5, the first 4 violations are silent
   notify-threshold: 5
   # How long WAC should wait before sending a new notification (to avoid notification spam)
-  notification-delay: 10
+  notification-delay: 20
 
   # If WAC should block hacks
   block: true
@@ -85,6 +85,7 @@ head_movements:
 # This check detects if a player is sending more packets than normally possible
 # Hacks that can trigger this: Timer, Blink
 packet_speed:
+  min-server-tps: 5 # During lag spikes this check can produce false positives, this setting should prevent that
 
 # This check detects if a player is sending spoofed packets
 # Hacks that can trigger this: NoFall, Jesus, some Fly modes, some Speed modes
