@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.13.1
+# Last updated in version: 0.14.0
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
 #
 # I tried to document everything as clearly as possible, but if you have any questions or other problems, you can join the WAC Discord:
@@ -69,6 +69,10 @@ General:
 # This check detects if a player hits an entity without looking at it
 # Hacks that can trigger this: KillAura
 angle:
+
+# This check detects if a player is flying inside a boat
+# Hacks that can trigger this: BoatFly
+boat_fly:
 
 # This check detects if a player is climbing a ladder/vine/scaffolding faster than he should be able to
 # Hacks that can trigger this: FastClimb, FastLadder
