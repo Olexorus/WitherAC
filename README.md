@@ -9,6 +9,6 @@ This repository will also contain the code for the API, the default config file 
 
 Links:
 
-[Spigot plugin page](https://www.spigotmc.org/resources/wither-anti-cheat-new-free-anti-cheating-solution-looking-for-testers.68657/)
+[Spigot plugin page](https://www.spigotmc.org/resources/wither-anti-cheat-free-accurate-and-optimized-anti-cheating-solution-1-13-x-1-14-x.68657/)
 
 [Discord](https://discord.gg/jjkR2EU)
