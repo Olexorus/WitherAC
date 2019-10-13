@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.14.0
+# Last updated in version: 0.15.0
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
 #
 # I tried to document everything as clearly as possible, but if you have any questions or other problems, you can join the WAC Discord:
@@ -56,6 +56,7 @@ General:
 
   # How long WAC should keep track of violations (or to put it differently, after which time violations are "forgotten" again)
   # This is tracked for each violation individually
+  # Set this to -1 to store violations until the server is restarted
   violation-expiry: 900
 
 # You can override each of the values above for individual checks here
