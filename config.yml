@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.15.0
+# Last updated in version: 0.17.1
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
 #
 # I tried to document everything as clearly as possible, but if you have any questions or other problems, you can join the WAC Discord:
@@ -26,7 +26,7 @@ General:
   # If WAC should send notifications about detections
   notify: true
   # How many violations are necessary before WAC starts sending notifications, for example when it's set to 5, the first 4 violations are silent
-  notify-threshold: 5
+  notify-threshold: 10
   # How long WAC should wait before sending a new notification (to avoid notification spam)
   notification-delay: 20
 
@@ -74,6 +74,8 @@ angle:
 # This check detects if a player is flying inside a boat
 # Hacks that can trigger this: BoatFly
 boat_fly:
+  notify-threshold: 1 # This check is very accurate
+  block-threshold: 1
 
 # This check detects if a player is climbing a ladder/vine/scaffolding faster than he should be able to
 # Hacks that can trigger this: FastClimb, FastLadder
@@ -90,6 +92,8 @@ head_movements:
 # This check detects if a player is sending more packets than normally possible
 # Hacks that can trigger this: Timer, Blink
 packet_speed:
+  notify-threshold: 1 # As long as the user is not lagging insanely, this check is very accurate
+  block-threshold: 1
   min-server-tps: 5 # During lag spikes this check can produce false positives, this setting should prevent that
 
 # This check detects if a player is sending spoofed packets
