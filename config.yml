@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.17.1
+# Last updated in version: 0.18.0
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
 #
 # I tried to document everything as clearly as possible, but if you have any questions or other problems, you can join the WAC Discord:
@@ -67,19 +67,23 @@ General:
 #   kick-threshold: 50
 #   max-player-ping: 200
 
-# This check detects if a player hits an entity without looking at it
-# Hacks that can trigger this: KillAura
-angle:
-
 # This check detects if a player is flying inside a boat
 # Hacks that can trigger this: BoatFly
 boat_fly:
   notify-threshold: 1 # This check is very accurate
   block-threshold: 1
 
+# This check detects if a player is trying to place or break a block out of his line of sight
+# Hacks that can trigger this: Nuker
+build_angle:
+
 # This check detects if a player is climbing a ladder/vine/scaffolding faster than he should be able to
 # Hacks that can trigger this: FastClimb, FastLadder
 fast_climb:
+
+# This check detects if a player hits an entity without looking at it
+# Hacks that can trigger this: KillAura
+fight_angle:
 
 # This check detects if a player moves illegally along the y-axis
 # Hacks that can trigger this: Fly, Glide, Jetpack, HighJump, Speed (especially BHops or similar)
@@ -103,6 +107,8 @@ packet_spoof:
 # This check detects if a player is faking a high ping to bypass checks
 # Hacks that can trigger this: Fake Lag, other hacks which try to make the server think you're having a high ping
 ping_spoof:
+  notify-threshold: 1 # This check is very accurate
+  block-threshold: 1
 
 # This check detects if a player can reach further than normally possible
 # Hacks that can trigger this: KillAura, Reach
