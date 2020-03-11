@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.18.0
+# Last updated in version: 0.18.1
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
 #
 # I tried to document everything as clearly as possible, but if you have any questions or other problems, you can join the WAC Discord:
@@ -107,8 +107,8 @@ packet_spoof:
 # This check detects if a player is faking a high ping to bypass checks
 # Hacks that can trigger this: Fake Lag, other hacks which try to make the server think you're having a high ping
 ping_spoof:
-  notify-threshold: 1 # This check is very accurate
-  block-threshold: 1
+  notify-threshold: 5 # This check is fairly accurate
+  block-threshold: 1 # Even when not sure you usually want the lower detected ping to avoid bypasses
 
 # This check detects if a player can reach further than normally possible
 # Hacks that can trigger this: KillAura, Reach
