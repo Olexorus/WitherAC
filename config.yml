@@ -1,20 +1,23 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.19.0
+# Last updated in version: 0.20.0
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
+#
+# IMPORTANT: WAC uses an innovative config format which allows you to configure everything at once, or fine tune each check individually if you want,
+# however to properly use this config file you first need to carefully read these comments
+#
+# WAC's configuration allows you to change each setting for each check individually
+# However since many values will be the same for most checks, there's a "General" section which applies for all checks
+# You can choose which settings should be used for the majority of checks there, and then override specific settings for specific checks where needed below
+# This system makes configuring WAC much easier and keeps the configuration file shorter while retaining all the flexibility
+#
+# All values are either booleans (true / false) or integers (whole numbers), except for the commands which are strings enclosed in quotation marks
+# All time values are in seconds
+# You can add your own comments using the '#' character
 #
 # I tried to document everything as clearly as possible, but if you have any questions or other problems, you can join the WAC Discord:
 # https://discord.gg/jjkR2EU
-#
-# WAC's configuration allows you to change each setting for each check individually
-# However since many values will be the same for most checks, there's a General section which applies for all checks
-# You can choose which settings should be used for the majority of checks there, and then override that specific setting for specific checks below where needed
-# This system makes configuring WAC much easier and keeps the configuration file shorter while retaining all the flexibility
-#
-# All values are either booleans (true/false) or integers (whole numbers)
-# All time values are in seconds
-# You can add your own comments using the '#' character
 # ----------------------------------------------------------------------------------------------------
 
 # The general values are the default values and used for all checks that don't override them explicitly below
@@ -37,7 +40,9 @@ General:
 
   # If WAC should kick hackers
   kick: false
-  # Same a notify-threshold but for blocking
+  # The command to execute when kicking someone (no / at the start!), %player_name% will be replaced by the kicked player's name
+  kick-command: "minecraft:kick %player_name% §4[WAC] §6You are suspected of using a §chacked client§6! If you want to continue playing on this server, §cdisable your hacks§6!"
+  # Same a notify-threshold but for kicking
   kick-threshold: 25
   # If someone was kicked and rejoins immediately, his violations will usually not have expired yet
   # This means that he is still over the kick threshold and will get kicked again immediately on the next violation
@@ -98,7 +103,7 @@ head_movements:
 packet_speed:
   notify-threshold: 5 # As long as the user is not lagging a lot, this check is very accurate
   block-threshold: 5
-  min-server-tps: 5 # During lag spikes this check can produce false positives, this setting should prevent that
+  min-server-tps: 10 # During lag spikes this check can produce false positives, this setting prevents that
 
 # This check detects if a player is sending spoofed packets
 # Hacks that can trigger this: NoFall, Jesus, some Fly modes, some Speed modes
@@ -107,8 +112,8 @@ packet_spoof:
 # This check detects if a player is faking a high ping to bypass checks
 # Hacks that can trigger this: Fake Lag, other hacks which try to make the server think you're having a high ping
 ping_spoof:
-  notify-threshold: 5 # This check is fairly accurate
-  block-threshold: 1 # Even when not sure you usually want the lower detected ping to avoid bypasses
+  notify-threshold: 1 # This check is very accurate
+  block-threshold: 1
 
 # This check detects if a player can reach further than normally possible
 # Hacks that can trigger this: KillAura, Reach
