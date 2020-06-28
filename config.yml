@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Welcome to the WitherAntiCheat configuration file!
 #
-# Last updated in version: 0.20.0
+# Last updated in version: 0.21.2
 # --> if you're using a newer version of WAC you should check the changelog to see if the config has been updated
 #
 # IMPORTANT: WAC uses an innovative config format which allows you to configure everything at once, or fine tune each check individually if you want,
@@ -81,6 +81,10 @@ boat_fly:
 # This check detects if a player is trying to place or break a block out of his line of sight
 # Hacks that can trigger this: Nuker
 build_angle:
+
+# This checks for movement speeds while riding a mob or Minecart
+# Hacks that can trigger this: EntitySpeed
+entity_speed:
 
 # This check detects if a player is climbing a ladder/vine/scaffolding faster than he should be able to
 # Hacks that can trigger this: FastClimb, FastLadder
