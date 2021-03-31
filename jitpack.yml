@@ -1,0 +1,4 @@
+jdk:
+  - openjdk8
+install:
+   - mvn install:install-file -Dfile=WitherAC_API.jar -DgroupId=com.gmail.olexorus.witherac.api -DartifactId=WitherAC_API -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
